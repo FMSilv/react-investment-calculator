@@ -7,14 +7,14 @@
 export function calculateInvestmentResults({
   initialInvestment,
   annualInvestment,
-  expectedReturn,
+  expectedDuration,
   duration,
 }) {
   const annualData = [];
   let investmentValue = initialInvestment;
 
   for (let i = 0; i < duration; i++) {
-    const interestEarnedInYear = investmentValue * (expectedReturn / 100);
+    const interestEarnedInYear = investmentValue * (expectedDuration / 100);
     investmentValue += interestEarnedInYear + annualInvestment;
     annualData.push({
       year: i + 1, // year identifier
